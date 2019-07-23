@@ -3,14 +3,16 @@ using System;
 using DatingApp.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DatingApp.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190722094921_AddedPublicId")]
+    partial class AddedPublicId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,7 @@ namespace DatingApp.API.Migrations
 
                     b.Property<bool>("MyProperty");
 
-                    b.Property<string>("");
+                    b.Property<string>("PublicID");
 
                     b.Property<string>("Url");
 
